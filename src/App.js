@@ -1,15 +1,9 @@
 import { useState, useEffect } from "react";
 import Tarjeta from "./components/Tarjeta";
 import Footer from "./components/Footer";
-import AppBar from '@mui/material/AppBar';
+import Navbar from "./components/Navbar";
+import Mainsection from "./components/Mainsection";
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-
-
 
 
 const App = () =>{
@@ -24,38 +18,33 @@ const App = () =>{
       });
   }, []);
 
+
+
 return(
 
   <div className="Contenedor">
 
-<Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-
-        <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
-           Not a Market
-          </Typography>
-          </Toolbar>
-      </AppBar>
-    </Box>
+  <Navbar/>
     
-    
-        <Box sx={{ bgcolor: '#cfe8fc', display: "flex", flexWrap: "wrap", justifyContent: 'center'}}>
-            
-               {productos.map(prod =>(
-                 <Tarjeta imagen={prod.thumbnail}
-                 nombre ={prod.name}
-                 precio={prod.price}  />
+       
+  
+  <Box sx={{ bgcolor: '#ff9800', display: "flex", flexWrap: "wrap", justifyContent: 'center'}}>
+        
+       {productos.map(prod =>(
+      <Tarjeta imagen={prod.thumbnail}
+      nombre ={prod.name}
+      precio={prod.price}
+       key={prod.id} />
 
-               ))}
-                    
-              
-           </Box>
+       ))}
+
+    
+        
+         
+   
+        </Box>
+ 
+
       
       
     
