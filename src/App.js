@@ -10,22 +10,24 @@ const App = () =>{
   const [productos, setProductos] = useState([]);
   const[valorInput, setValorInput] = useState("")
   const[busqueda,setBusqueda] = useState("")
+  
 const handleClick = () =>{
-  setValorInput(e.target.value)
+  setBusqueda(valorInput)
+  console.log("hola")
 }
 
-const hanldeChange = () =>{
-  setBusqueda(valorInput)
-}
+// const handleChange = () =>{
+//   setValorInput(e.target.value)
+// }
   
   useEffect(() => {
    
-    fetch(`https://api.mercadolibre.com/sites/MLA/search?q={busqueda}`)
+    fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${busqueda}`)
       .then((res) => res.json())
       .then((data) => {
         setProductos(data.results);
       });
-  }, []);
+  }, [busqueda]);
 
 
 
@@ -33,10 +35,10 @@ return(
 
   <div >
 
-  <Navbar />
+  <Navbar 
+  clickBoton ={handleClick}
+ />
     
-       
-  
   <Box sx={{ bgcolor: '#ff9800', display: "flex", flexWrap: "wrap", justifyContent: 'center'}}>
         
        {productos.map(prod =>(

@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
-const Navbar = () =>{
+const Navbar = ({clickBoton, cambioInput}) =>{
 
 return (
 
@@ -26,8 +26,8 @@ return (
        Not a Market
       </Typography>
     <Box>
-      <TextField id="filled-basic" label="Filled" variant="filled" />
-      <Button  size="small">Buscar</Button>
+      <TextField id="filled-basic" label="Filled" variant="filled"  onChange={cambioInput}/>
+      <Button  size="small" onClick ={clickBoton}>Buscar</Button>
     </Box>
   </Box>
 
