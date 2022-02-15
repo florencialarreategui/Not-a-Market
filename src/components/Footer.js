@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import { FaGithubAlt } from "react-icons/fa";
 
 const Footer = () =>{
 
@@ -21,6 +22,7 @@ const Footer = () =>{
           >
            Hecho por Flor
           </Typography>
+          <FaGithubAlt/>
 
 
 

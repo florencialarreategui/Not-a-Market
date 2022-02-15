@@ -8,10 +8,19 @@ import Box from '@mui/material/Box';
 
 const App = () =>{
   const [productos, setProductos] = useState([]);
+  const[valorInput, setValorInput] = useState("")
+  const[busqueda,setBusqueda] = useState("")
+const handleClick = () =>{
+  setValorInput(e.target.value)
+}
+
+const hanldeChange = () =>{
+  setBusqueda(valorInput)
+}
   
   useEffect(() => {
    
-    fetch(`https://api.mercadolibre.com/sites/MLA/search?q=iphone`)
+    fetch(`https://api.mercadolibre.com/sites/MLA/search?q={busqueda}`)
       .then((res) => res.json())
       .then((data) => {
         setProductos(data.results);
@@ -22,9 +31,9 @@ const App = () =>{
 
 return(
 
-  <div className="Contenedor">
+  <div >
 
-  <Navbar/>
+  <Navbar />
     
        
   
