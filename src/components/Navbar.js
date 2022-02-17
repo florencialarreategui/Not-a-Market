@@ -2,6 +2,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import { BsFillCartXFill } from "react-icons/bs";
 
 const Navbar = ({clickBoton, cambioInput}) =>{
 
@@ -13,21 +14,29 @@ return (
       backgroundColor: '#ed6c02',
       display: "flex",
       p:2,
-      justifyContent: 'space-evenly'
-
+      justifyContent: 'space-between',
+      boxShadow: 3
     }}>
 
 <Typography
-        variant="h6"
+        variant="h2"
         noWrap
         component="div"
-        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }}}
       >
-       Not a Market
+       <Box sx={{ color: 'secondary.main'}}>Not a Market <BsFillCartXFill/></Box>
       </Typography>
-    <Box>
-      <TextField id="filled-basic" label="Filled" variant="filled"  onChange={cambioInput}/>
-      <Button  size="small" onClick ={clickBoton}>Buscar</Button>
+    <Box
+       sx={{
+        display: "flex",
+        p:1,
+        justifyContent: 'space-around',
+        mr:5,
+       
+
+      }}>
+      <TextField label="¿Qué buscás?" variant="filled" color="secondary" focused onChange={cambioInput}/>
+       <Button  size="small" variant="contained" color="secondary" onClick ={clickBoton}>Buscar</Button>
     </Box>
   </Box>
 

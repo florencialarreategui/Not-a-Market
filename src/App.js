@@ -16,9 +16,11 @@ const handleClick = () =>{
   console.log("hola")
 }
 
-// const handleChange = () =>{
-//   setValorInput(e.target.value)
-// }
+const handleChange = (e) =>{
+  setValorInput(e.target.value)
+  console.log(valorInput)
+}
+
   
   useEffect(() => {
    
@@ -34,32 +36,26 @@ const handleClick = () =>{
 return(
 
   <div >
-
-  <Navbar 
-  clickBoton ={handleClick}
- />
+        <Navbar 
+        clickBoton ={handleClick}
+        cambioInput ={handleChange}
+      />
     
-  <Box sx={{ bgcolor: '#ff9800', display: "flex", flexWrap: "wrap", justifyContent: 'center'}}>
+      <Box sx={{ bgcolor: '#ff9800', display: "flex", flexWrap: "wrap", justifyContent: 'center'}}>
         
-       {productos.map(prod =>(
-      <Tarjeta imagen={prod.thumbnail}
-      nombre ={prod.name}
-      precio={prod.price}
-       key={prod.id} />
+            {productos.map(prod =>(
+            <Tarjeta imagen={prod.thumbnail}
+            nombre ={prod.name}
+            precio={prod.price}
+            key={prod.id} />
 
        ))}
 
-    
-        
-         
-   
+{productos.length === 0 && <div><img src="./imagenes/not-a-market.png"/></div>}
+
         </Box>
  
-
-      
-      
-    
-   <Footer/>
+         <Footer/>
      
       
     </div>
