@@ -18,12 +18,7 @@ const DetalleProducto = () => {
   return (
     <div>
     <h1>Detalle producto</h1>
-    <article className="detalle">
-      <h2>{productoId.title} </h2>
-      <h3>${productoId.price}</h3>
-      <img src={productoId.thumbnail} />
-
-    </article>
+    
     </div>
   )
 }

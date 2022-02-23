@@ -1,12 +1,7 @@
 import { useState, useEffect } from "react";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import Mainsection from "./components/Mainsection"
-import Tarjeta from "./components/Tarjeta";
-import Box from '@mui/material/Box';
-
-
-
+import MainSection from "./components/MainSection"
 
 
 const App = () =>{
@@ -34,7 +29,7 @@ return(
           cambioInput ={handleChange}
         />
         
-         <Mainsection></Mainsection>
+         <MainSection></MainSection>
                 
        <Footer/>
         

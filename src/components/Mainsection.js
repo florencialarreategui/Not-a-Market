@@ -4,9 +4,7 @@ import Tarjeta from "./Tarjeta"
 
 import { useEffect, useState } from "react";
 
-
-
-const Mainsection = ({busqueda}) =>{
+const MainSection = ({busqueda}) =>{
 
     const [productos, setProductos] = useState([]);
 
@@ -35,15 +33,9 @@ return(
 
                   </Box>    
 
-        
-     
-
-
-
-
 );
 
 
 };
 
-export default Mainsection;
+export default MainSection;

@@ -3,7 +3,6 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { BsFillCartXFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
 
 const Navbar = ({clickBoton, cambioInput}) =>{
 
@@ -26,7 +25,7 @@ return (
         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }}}
       >
     
-       <Box sx={{ color: 'secondary.main'}}><Link to="/">Not a Market</Link> <BsFillCartXFill/></Box>
+       <Box sx={{ color: 'secondary.main'}}>Not a Market<BsFillCartXFill/></Box>
       </Typography> 
       
      
