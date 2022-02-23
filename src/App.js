@@ -4,9 +4,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Tarjeta from "./components/Tarjeta";
 import Box from '@mui/material/Box';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 const App = () =>{
@@ -46,7 +44,7 @@ return(
     />
          <Routes>
          <Route path="/" element={<Home />}/>
-                
+            </Routes>     
                   <Box sx={{ bgcolor: '#ff9800', display: "flex", flexWrap: "wrap", justifyContent: 'center'}}>
                     
                     {productos.map(prod =>(
@@ -57,10 +55,10 @@ return(
 
                         ))}
 
-                      {productos.length === 0 && <Home></Home>}
+                     
 
                   </Box>
-         </Routes>
+       
   
        <Footer/>
         

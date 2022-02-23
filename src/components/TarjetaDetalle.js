@@ -5,25 +5,42 @@ const DetalleProducto = () => {
   const params = useParams() 
   const [productoId, setProductoId] = useState([])
 
-  console.log(params.idPersonaje)
-
   useEffect(() => {
     fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${params.id}`)
     .then(res => res.json())
     .then(data => setProductoId(data))
   }, [] )
 
-  console.log(personaje)
+  
   return (
-    <div>
-    <h1>Detalle producto</h1>
-    <article className="detalle">
-      <h2>{productoId.title} </h2>
-      <h3>${productoId.price}</h3>
-      <img src={productoId.thumbnail} />
-
-    </article>
-    </div>
+    
+    <Card sx={{ maxWidth: 250,
+      m: 2,
+       p: 1.5,
+      }} >
+ <CardActionArea>        
+           <CardMedia
+             component="img"
+             image = {productoId.thumbnail}
+             height= "150"
+         
+           />
+           
+           <CardContent>
+             <Typography gutterBottom variant="h5" component="div">
+               {productoId.title}
+             </Typography>
+             $ {productoId.price}
+             <Typography variant="body2" color="text.secondary">
+               {descripcion}
+             </Typography>
+           </CardContent>
+           <CardActions>  
+           <Button size="small">Guardar</Button>
+             <Button variant="contained" size="small">Comprar</Button>
+           </CardActions>
+          </CardActionArea> 
+         </Card>
   )
 }
 
