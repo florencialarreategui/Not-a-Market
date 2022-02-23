@@ -1,20 +1,22 @@
 import Box from '@mui/material/Box';
 
+import { useEffect, useState } from "react";
+
+
 
 const Mainsection = () =>{
 
-   
+ 
 
 return(
- <Box sx={{ bgcolor: '#ff9800', display: "flex", flexWrap: "wrap", justifyContent: 'center'}}>
+ 
+        
+
         
      
 
-    
-        
-         
-   
-</Box>
+
+
 
 );
 

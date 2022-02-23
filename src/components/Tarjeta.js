@@ -9,12 +9,12 @@ import { MdBookmark } from "react-icons/md";
 
 const Tarjeta = ({ nombre, imagen, precio, descripcion }) => {
   return (
-    
+   
     <Card sx={{ maxWidth: 250,
                  m: 2,
                   p: 1.5,
                  }} >
-                 <CardActionArea>  
+            <CardActionArea>        
                       <CardMedia
                         component="img"
                         image = {imagen}
@@ -35,9 +35,9 @@ const Tarjeta = ({ nombre, imagen, precio, descripcion }) => {
                       <Button size="small">Guardar</Button>
                         <Button variant="contained" size="small">Comprar</Button>
                       </CardActions>
-                       </CardActionArea>
+                     </CardActionArea> 
                     </Card>
-
+ 
                    
 
   );
