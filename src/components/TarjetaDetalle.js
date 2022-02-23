@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 
 const DetalleProducto = () => {
   const params = useParams() 
@@ -13,6 +14,7 @@ const DetalleProducto = () => {
 
   
   return (
+
     
     <Card sx={{ maxWidth: 250,
       m: 2,
@@ -41,6 +43,7 @@ const DetalleProducto = () => {
            </CardActions>
           </CardActionArea> 
          </Card>
+
   )
 }
 
