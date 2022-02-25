@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import Home from "./Home";
-import Tarjeta from "./Tarjeta"
-
+import Tarjeta from "./Tarjeta";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const MainSection = ({busqueda}) =>{
@@ -22,10 +22,13 @@ return(
     <Box sx={{ bgcolor: '#ff9800', display: "flex", flexWrap: "wrap", justifyContent: 'center'}}>
                     
                     {productos.map(prod =>(
+                      <Link to={`/productos/${prod.id}`}>
                     <Tarjeta imagen={prod.thumbnail}
                     nombre ={prod.name}
                     precio={prod.price}
-                    key={prod.id} />
+                    key={prod.id} 
+                    />
+                    </Link>
 
                         ))}
 

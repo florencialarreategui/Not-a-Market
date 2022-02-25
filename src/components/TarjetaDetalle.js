@@ -1,21 +1,29 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import { CardActionArea } from '@mui/material';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 
 const DetalleProducto = () => {
   const params = useParams() 
-  const [productoId, setProductoId] = useState([])
+  const [producto, setProducto] = useState([])
 
   useEffect(() => {
-    fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${params.id}`)
+    fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${params.idProducto}`)
     .then(res => res.json())
-    .then(data => setProductoId(data))
-  }, [] )
+    .then(data => setProducto(data))
+  }, [params.idProducto] )
 
+console.log(params.idProducto)
+console.log(producto)
   
   return (
 
-    
     <Card sx={{ maxWidth: 250,
       m: 2,
        p: 1.5,
@@ -23,18 +31,18 @@ const DetalleProducto = () => {
  <CardActionArea>        
            <CardMedia
              component="img"
-             image = {productoId.thumbnail}
+             image = {producto.thumbnail}
              height= "150"
          
            />
            
            <CardContent>
              <Typography gutterBottom variant="h5" component="div">
-               {productoId.title}
+               {producto.title}
              </Typography>
-             $ {productoId.price}
+             $ {producto.price}
              <Typography variant="body2" color="text.secondary">
-               {descripcion}
+               {producto.descripcion}
              </Typography>
            </CardContent>
            <CardActions>  

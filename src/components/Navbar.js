@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { BsFillCartXFill } from "react-icons/bs";
-
+import { Link } from "react-router-dom";
 const Navbar = ({clickBoton, cambioInput}) =>{
 
 return (
@@ -25,7 +25,8 @@ return (
         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }}}
       >
     
-       <Box sx={{ color: 'secondary.main'}}>Not a Market<BsFillCartXFill/></Box>
+    <Link to="/"> <Box sx={{ color: 'secondary.main'}}> Not a Market <BsFillCartXFill/></Box></Link>
+     
       </Typography> 
       
      
@@ -37,7 +38,7 @@ return (
         mr:5,
       }}>
       <TextField label="¿Qué buscás?" variant="filled" color="secondary" focused onChange={cambioInput}/>
-       <Button  size="small" variant="contained" color="secondary" onClick ={clickBoton}>Buscar</Button>
+    <Link to="/productos"><Button  size="small" variant="contained" color="secondary" onClick ={clickBoton}>Buscar</Button> </Link>
     </Box>
   </Box>
 
