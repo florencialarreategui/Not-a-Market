@@ -7,9 +7,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import Navbar from "./Navbar";
 
 
-const DetalleProducto = () => {
+const TarjetaDetalle = () => {
   const params = useParams() 
   const [producto, setProducto] = useState([])
 
@@ -17,42 +19,29 @@ const DetalleProducto = () => {
     fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${params.idProducto}`)
     .then(res => res.json())
     .then(data => setProducto(data))
-  }, [params.idProducto] )
+    }, [params.idProducto] )
 
 console.log(params.idProducto)
 console.log(producto)
+console.log(useEffect)
   
   return (
+  <>
+    <Navbar></Navbar>
 
-    <Card sx={{ maxWidth: 250,
-      m: 2,
-       p: 1.5,
-      }} >
- <CardActionArea>        
-           <CardMedia
-             component="img"
-             image = {producto.thumbnail}
-             height= "150"
-         
-           />
-           
-           <CardContent>
-             <Typography gutterBottom variant="h5" component="div">
-               {producto.title}
-             </Typography>
-             $ {producto.price}
-             <Typography variant="body2" color="text.secondary">
-               {producto.descripcion}
-             </Typography>
-           </CardContent>
-           <CardActions>  
-           <Button size="small">Guardar</Button>
-             <Button variant="contained" size="small">Comprar</Button>
-           </CardActions>
-          </CardActionArea> 
-         </Card>
+    <Box sx={{ bgcolor: '#ff9800', display: "flex", flexWrap: "wrap", justifyContent: 'center'}}>
+    <article>
+            <h2>{producto.title}</h2>
+            <img src={producto.thumbnail }alt={producto.title}/>
+            <span>${producto.price}</span>
+            <p>{producto.condition}</p>
+            <p>{producto.warranty}</p>
+    </article>
+      
+    </Box>
+  </>
 
-  )
-}
+  );
+};
 
-export default DetalleProducto
+export default TarjetaDetalle;

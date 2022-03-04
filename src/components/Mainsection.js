@@ -1,12 +1,26 @@
 import Box from '@mui/material/Box';
 import Home from "./Home";
 import Tarjeta from "./Tarjeta";
+import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const MainSection = ({busqueda}) =>{
+const MainSection = ({}) =>{
 
     const [productos, setProductos] = useState([]);
+    const[valorInput, setValorInput] = useState("")
+    const[busqueda,setBusqueda] = useState("")
+  
+      const handleClick = () =>{
+        setBusqueda(valorInput)
+        console.log("hola")
+      }
+
+      const handleChange = (e) =>{
+        setValorInput(e.target.value)
+        console.log(valorInput)
+      }
+
 
     useEffect(() => {
    
@@ -17,14 +31,21 @@ const MainSection = ({busqueda}) =>{
           });
       }, [busqueda]);
 
+
+
 return(
+  <div>
+  <Navbar  
+          clickBoton ={handleClick}
+          cambioInput ={handleChange}
+        />
  
     <Box sx={{ bgcolor: '#ff9800', display: "flex", flexWrap: "wrap", justifyContent: 'center'}}>
                     
                     {productos.map(prod =>(
                       <Link to={`/productos/${prod.id}`}>
                     <Tarjeta imagen={prod.thumbnail}
-                    nombre ={prod.name}
+                    nombre ={prod.title}
                     precio={prod.price}
                     key={prod.id} 
                     />
@@ -32,9 +53,10 @@ return(
 
                         ))}
 
-                      {productos.length === 0 && <Home></Home>}
+                      
 
                   </Box>    
+    </div>
 
 );
 
