@@ -12,7 +12,6 @@ const MainSection = ({}) => {
 
   const handleClick = () => {
     setBusqueda(valorInput);
-    console.log("hola");
   };
 
   const handleChange = (e) => {

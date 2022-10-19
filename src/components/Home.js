@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import Navbar from "./Navbar";
 import Typography from "@mui/material/Typography";
-import imagen from "./imagenes/not-a-market.png";
+import imagen from "../imagenes/not-a-market.png";
 
 const Home = () => {
   return (
@@ -12,7 +12,6 @@ const Home = () => {
           bgcolor: "#ff9800",
           display: "flex",
           justifyContent: "center",
-          justifyContent: "center",
         }}
       >
         <Typography
@@ -21,8 +20,16 @@ const Home = () => {
           component="div"
           sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
         >
-          <img src={imagen} />
-        </Typography>
+           <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          m: 18,
+        }}>
+        <img src={imagen} />
+        </Box>
+        </Typography> 
+      
       </Box>
     </div>
   );

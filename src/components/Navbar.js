@@ -46,6 +46,9 @@ const Navbar = ({ clickBoton, cambioInput }) => {
           color="secondary"
           focused
           onChange={cambioInput}
+          sx={{
+            marginRight: 3,
+          }}
         />
         <Link to="/productos">
           <Button
@@ -53,6 +56,7 @@ const Navbar = ({ clickBoton, cambioInput }) => {
             variant="contained"
             color="secondary"
             onClick={clickBoton}
+
           >
             Buscar
           </Button>{" "}
