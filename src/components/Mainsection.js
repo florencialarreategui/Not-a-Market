@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const MainSection = ({}) => {
+const MainSection = () => {
   const [productos, setProductos] = useState([]);
   const [valorInput, setValorInput] = useState("");
   const [busqueda, setBusqueda] = useState("");
