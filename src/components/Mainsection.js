@@ -1,5 +1,4 @@
 import Box from "@mui/material/Box";
-import Home from "./Home";
 import Tarjeta from "./Tarjeta";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";

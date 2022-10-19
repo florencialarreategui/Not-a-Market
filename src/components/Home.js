@@ -26,7 +26,7 @@ const Home = () => {
           justifyContent: "center",
           m: 18,
         }}>
-        <img src={imagen} />
+        <img src={imagen} alt="Logo"/>
         </Box>
         </Typography> 
       

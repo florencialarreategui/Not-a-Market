@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { MdBookmark } from "react-icons/md";
+// import { MdBookmark } from "react-icons/md";
 
 const Tarjeta = ({ nombre, imagen, precio, descripcion }) => {
   return (

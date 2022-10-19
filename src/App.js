@@ -1,5 +1,4 @@
 import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
 import MainSection from "./components/MainSection";
 import Home from "./components/Home";
 import TarjetaDetalle from "./components/TarjetaDetalle";
